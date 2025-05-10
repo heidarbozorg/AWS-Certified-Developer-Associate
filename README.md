@@ -20,7 +20,7 @@ This repository contains categorized and logically ordered notes to help you pre
 | 10 | DynamoDB Pricing                       | Cost insight                 | Charges for storage, RCU/WCU, and optional features               |
 | 11 | Gateway VPC Endpoint for DynamoDB      | Private access               | Secure, internet-free access from VPC to DynamoDB                 |
 | 12 | SQS Extended Client                    | Large message handling       | Stores large payloads in S3, only references in SQS               |
-| 13 | SQS Message Feeding                    | Integration flexibility      | Any external service can send messages to the worker queue        |
+| 13 | SQS Dead-Letter Queues (DLQ)           | Failure recovery             | Captures messages that fail processing after max retry attempts   |
 | 14 | Dedicated Worker in Beanstalk          | Asynchronous processing      | Processes SQS messages using EC2-based app                        |
 | 15 | Beanstalk vs Lambda for SQS            | Processing comparison        | Choose based on latency, cost, and flexibility                    |
 | 16 | Triggering Beanstalk Workers           | SQS dependency               | Works only with SQS, not direct events or HTTP                    |
@@ -29,7 +29,7 @@ This repository contains categorized and logically ordered notes to help you pre
 | 19 | Step Functions Workflow Types          | Orchestration choice         | Standard = durable, Express = high-speed                          |
 | 20 | AWS Glue                               | Serverless ETL               | Discover, catalog, and transform data using visual or code jobs   |
 | 21 | CloudFormation Pseudo Parameters       | Template dynamism            | Built-in variables like AWS::AccountId or AWS::Region             |
-| 22 | AWS::Partition                         | Multi-region support         | Builds ARNs that work across standard, GovCloud, and China        |
+| 22 | AWS CloudFormation Change Sets         | Deployment safety            | Previews changes to resources before applying an update           |
 
 ---
 
@@ -71,8 +71,8 @@ Enables private access to DynamoDB from your VPC without exposing traffic to the
 ### 12. SQS Extended Client  
 Enables sending messages > 256 KB by storing the payload in S3 and passing a reference in SQS.
 
-### 13. SQS Message Feeding  
-SQS queues can be fed from many sources—like Lambda, EC2, SNS, or EventBridge—to trigger workers or consumers.
+### 13. SQS Dead-Letter Queues (DLQ)  
+Stores failed SQS messages after retry attempts are exhausted—critical for debugging and guaranteed processing patterns.
 
 ### 14. Dedicated Worker in Beanstalk  
 Runs a background EC2-based worker that polls SQS and processes jobs (e.g., email, image processing).
@@ -98,10 +98,11 @@ A serverless ETL service for crawling, transforming, and loading structured and 
 ### 21. CloudFormation Pseudo Parameters  
 Automatically available variables like `AWS::Region` and `AWS::AccountId` that make templates dynamic and reusable.
 
-### 22. AWS::Partition  
-A pseudo parameter used in CloudFormation to ensure that ARNs work across `aws`, `aws-cn`, and `aws-us-gov` partitions.
+### 22. AWS CloudFormation Change Sets  
+Safely preview the differences between the current stack and proposed changes—prevents unexpected infrastructure drift.
 
 ---
+
 ## License
 
-MIT License => free to use, modify, and share. Contributions welcome!
+MIT License ⇒ free to use, modify, and share. Contributions welcome!
