@@ -1,7 +1,5 @@
 # AWS Certified Developer – Associate: Mock exam 4 notes
 
----
-
 ## Cheat Sheet Table
 
 | #  | Topic                                      | Cheat Sheet Summary                                                    |
