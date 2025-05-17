@@ -6,30 +6,30 @@ This repository contains categorized and logically ordered notes to help you pre
 
 ## Cheat Sheet Table (Ordered from Basic to Advanced)
 
-| #  | Topic                                  | Category                     | Cheat Sheet Summary                                                |
-|----|----------------------------------------|------------------------------|--------------------------------------------------------------------|
-| 1  | Built-in Encryption in S3              | Data protection              | Uses SSE-S3, SSE-KMS, or SSE-C to encrypt objects at rest         |
-| 2  | SSE-S3 Costs and Limitations           | Encryption clarity           | Free, low-latency, but not reusable for other services            |
-| 3  | S3 Event Notifications to SNS          | Event-driven architecture    | Trigger SNS topic when an object is uploaded to S3                |
-| 4  | S3 Replication (SRR/CRR)               | Backup & compliance          | Auto-copy of objects within or across AWS regions                 |
-| 5  | Origin Group in CloudFront             | Resilient content delivery   | Ensures failover between two origins in CloudFront                |
-| 6  | MOCK Integrations in API Gateway       | Testing & stub APIs          | Returns predefined responses with no backend                      |
-| 7  | RCU and WCU in DynamoDB                | Performance planning         | Defines throughput for read/write operations                      |
-| 8  | DAX in DynamoDB                        | Read optimization            | In-memory cache for fast, low-latency reads                       |
-| 9  | Batch Operations in DynamoDB           | Efficiency boost             | Reduce API calls by grouping reads/writes                         |
-| 10 | DynamoDB Pricing                       | Cost insight                 | Charges for storage, RCU/WCU, and optional features               |
-| 11 | Gateway VPC Endpoint for DynamoDB      | Private access               | Secure, internet-free access from VPC to DynamoDB                 |
-| 12 | SQS Extended Client                    | Large message handling       | Stores large payloads in S3, only references in SQS               |
-| 13 | SQS Dead-Letter Queues (DLQ)           | Failure recovery             | Captures messages that fail processing after max retry attempts   |
-| 14 | Dedicated Worker in Beanstalk          | Asynchronous processing      | Processes SQS messages using EC2-based app                        |
-| 15 | Beanstalk vs Lambda for SQS            | Processing comparison        | Choose based on latency, cost, and flexibility                    |
-| 16 | Triggering Beanstalk Workers           | SQS dependency               | Works only with SQS, not direct events or HTTP                    |
-| 17 | Elastic Beanstalk Serverless?          | Clarifying model             | Not serverless—manages EC2 with auto scaling                      |
-| 18 | ecs.config File                        | ECS agent configuration      | Controls ECS agent behavior on EC2 instances                      |
-| 19 | Step Functions Workflow Types          | Orchestration choice         | Standard = durable, Express = high-speed                          |
-| 20 | AWS Glue                               | Serverless ETL               | Discover, catalog, and transform data using visual or code jobs   |
-| 21 | CloudFormation Pseudo Parameters       | Template dynamism            | Built-in variables like AWS::AccountId or AWS::Region             |
-| 22 | AWS CloudFormation Change Sets         | Deployment safety            | Previews changes to resources before applying an update           |
+| #  | Topic                                  | Cheat Sheet Summary                                                |
+|----|----------------------------------------|--------------------------------------------------------------------|
+| 1  | Built-in Encryption in S3              | Uses SSE-S3, SSE-KMS, or SSE-C to encrypt objects at rest         |
+| 2  | SSE-S3 Costs and Limitations           | Free, low-latency, but not reusable for other services            |
+| 3  | S3 Event Notifications to SNS          | Trigger SNS topic when an object is uploaded to S3                |
+| 4  | S3 Replication (SRR/CRR)               | Auto-copy of objects within or across AWS regions                 |
+| 5  | Origin Group in CloudFront             | Ensures failover between two origins in CloudFront                |
+| 6  | MOCK Integrations in API Gateway       | Returns predefined responses with no backend                      |
+| 7  | RCU and WCU in DynamoDB                | Defines throughput for read/write operations                      |
+| 8  | DAX in DynamoDB                        | In-memory cache for fast, low-latency reads                       |
+| 9  | Batch Operations in DynamoDB           | Reduce API calls by grouping reads/writes                         |
+| 10 | DynamoDB Pricing                       | Charges for storage, RCU/WCU, and optional features               |
+| 11 | Gateway VPC Endpoint for DynamoDB      | Secure, internet-free access from VPC to DynamoDB                 |
+| 12 | SQS Extended Client                    | Stores large payloads in S3, only references in SQS               |
+| 13 | SQS Dead-Letter Queues (DLQ)           | Captures messages that fail processing after max retry attempts   |
+| 14 | Dedicated Worker in Beanstalk          | Processes SQS messages using EC2-based app                        |
+| 15 | Beanstalk vs Lambda for SQS            | Choose based on latency, cost, and flexibility                    |
+| 16 | Triggering Beanstalk Workers           | Works only with SQS, not direct events or HTTP                    |
+| 17 | Elastic Beanstalk Serverless?          | Not serverless—manages EC2 with auto scaling                      |
+| 18 | ecs.config File                        | Controls ECS agent behavior on EC2 instances                      |
+| 19 | Step Functions Workflow Types          | Standard = durable, Express = high-speed                          |
+| 20 | AWS Glue                               | Discover, catalog, and transform data using visual or code jobs   |
+| 21 | CloudFormation Pseudo Parameters       | Built-in variables like AWS::AccountId or AWS::Region             |
+| 22 | AWS CloudFormation Change Sets         | Previews changes to resources before applying an update           |
 
 ---
 
