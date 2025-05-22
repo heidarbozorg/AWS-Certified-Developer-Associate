@@ -134,7 +134,7 @@
 ---
 
 
-## 📘 Detailed Notes
+## Detailed Notes
 
 ### 1. S3: Eventual Consistency on Bucket Deletion
 S3 uses eventual consistency for bucket listings. When you delete a bucket and immediately call `ListBuckets`, the deleted bucket might still appear briefly due to propagation delays across regions.
