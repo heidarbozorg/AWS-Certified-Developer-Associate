@@ -1,6 +1,6 @@
 # AWS Certified Developer – Associate Notes
 
-## Cheat Sheet Table (Logically Grouped)
+## Cheat Sheet Table
 
 | # | Topic | Summary |
 |----|-------|---------|
