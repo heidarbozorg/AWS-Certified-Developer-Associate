@@ -1,4 +1,4 @@
-# AWS Certified Developer – Associate: Mock exam 1 notes
+# AWS Certified Developer – Associate Notes
 
 ## Cheat Sheet Table
 
@@ -22,15 +22,6 @@
 | 16 | AWS CDK App Template                                | Generates project structure for defining infrastructure as code.       |
 | 17 | CDK does not generate application code              | CDK defines infrastructure; you write app code like Lambda separately. |
 | 18 | AWS Serverless Application Repository (SAR)         | Repository of reusable serverless apps built with AWS SAM.             |
-
-
-
-# AWS Certified Developer – Associate: Mock exam 2 notes
-
-## Cheat Sheet Table
-
-| #  | Topic                                      | Summary                                                                 |
-|----|--------------------------------------------|-------------------------------------------------------------------------|
 | 1  | `appspec.yml` vs `buildspec.yml`           | `appspec.yml` is for CodeDeploy deployments; `buildspec.yml` is for CodeBuild builds. |
 | 2  | `sam deploy`                               | Performs a full CloudFormation stack deployment from a SAM app.        |
 | 3  | `sam sync`                                 | Rapidly updates code/config for existing resources, but cannot create new ones. |
@@ -60,15 +51,6 @@
 | 27 | SNS Subscription                           | Defines endpoint and protocol for receiving messages from topic.       |
 | 28 | SNS Filter Policy                          | Controls message delivery to subscribers using message attributes.     |
 | 29 | AWS CLI `--dry-run`                        | Tests IAM permissions for an action without actually executing it.     |
-
-
-
-# AWS Certified Developer – Associate: Mock exam 4 notes
-
-## Cheat Sheet Table
-
-| #  | Topic                                      | Cheat Sheet Summary                                                    |
-| -- | ------------------------------------------ | ---------------------------------------------------------------------- |
 | 1  | CloudFormation Import/Export Syntax        | Use `Export`/`Fn::ImportValue` to share values across stacks           |
 | 2  | Stack vs Subnet Concepts in CloudFormation | Understand stack structure and how subnets fit into CFN definitions    |
 | 3  | Cognito Sync                               | Deprecated feature for cross-device data sync                          |
@@ -91,16 +73,6 @@
 | 20 | Send Data to Kinesis from EC2              | Use SDK, CLI, Kinesis Agent, or KPL depending on source                |
 | 21 | CloudWatch Logs Encryption via KMS         | Associate CMK with log group and grant access                          |
 | 22 | ALB Host-Based vs Path-Based Routing       | Route based on domain (host-header) or URL path (path-pattern)         |
-
----
-
-
-# AWS Certified Developer – Associate: Mock exam 5 notes
-
-## Cheat Sheet Table
-
-| #  | Topic                           | Cheat Sheet Summary |
-|----|----------------------------------|----------------------|
 | 1  | S3 Versioning & Null Version     | Objects uploaded before versioning have a `null` version ID. Uploads after enabling versioning get unique IDs. After a delete, a **delete marker** is created with its own version ID. |
 | 2  | S3 Select                        | Allows querying a **subset of data** from S3 objects using **SQL-like expressions**. Reduces data transfer and processing costs. Supports CSV, JSON, and Parquet. |
 | 3 | S3 CLI: Pagination Options       | Use `--max-items` (limit total returned), `--page-size` (items per API call), `--starting-token` (resume pagination). All useful for **efficient batch processing**. |
@@ -116,14 +88,6 @@
 | 13 | EC2 Instance Metadata     | Query instance metadata at `http://169.254.169.254/latest/meta-data/` to get instance ID, IP, security groups, etc. Use **IMDSv2** (token-based) for improved security. |
 | 14 | X-Ray Annotations & Indexes  | Use **Annotations** (simple key-value pairs) for **filtering** and **grouping traces** in X-Ray; searchable types: `string`, `number`, `boolean`. Metadata is **not indexed** and used for debugging only. |
 | 15 | AWS CodeStar     | AWS CodeStar provides an all-in-one UI to create, manage, and deploy applications using CodeCommit, CodeBuild, CodePipeline, and CodeDeploy. Great for small teams and rapid setup. |
-
-
-# AWS Certified Developer – Associate: Mock Exam 6 Notes
-
-## Cheat Sheet Table
-
-| #  | Topic                                                | Summary                                                                 |
-|----|------------------------------------------------------|-------------------------------------------------------------------------|
 | 1  | [S3: Eventual Consistency on Bucket Deletion](#1-s3-eventual-consistency-on-bucket-deletion) | Deleted bucket might still appear due to eventual consistency.         |
 | 2  | [S3: Simultaneous Writes & Event Notifications](#2-s3-simultaneous-writes--event-notifications) | Simultaneous writes to non-versioned object may trigger only one event.|
 | 3  | [S3: Encryption by Default](#3-s3-encryption-by-default) | Region-wide setting; can't disable encryption for individual resources.|
@@ -144,8 +108,31 @@
 | 18 | [ECR: `get-login --no-include-email`](#18-ecr-get-login---no-include-email) | Authenticates Docker to ECR; now deprecated in favor of `get-login-password`.|
 | 19 | [DynamoDB: Global Tables for Global Users](#19-dynamodb-global-tables-for-global-users) | Use Global Tables to reduce latency for globally distributed users.     |
 | 20 | [DynamoDB: Conflict Handling in Global Tables](#20-dynamodb-conflict-handling-in-global-tables) | Last writer wins (based on timestamp); replication is asynchronous.     |
+| 1  | Built-in Encryption in S3              | Uses SSE-S3, SSE-KMS, or SSE-C to encrypt objects at rest         |
+| 2  | SSE-S3 Costs and Limitations           | Free, low-latency, but not reusable for other services            |
+| 3  | S3 Event Notifications to SNS          | Trigger SNS topic when an object is uploaded to S3                |
+| 4  | S3 Replication (SRR/CRR)               | Auto-copy of objects within or across AWS regions                 |
+| 5  | Origin Group in CloudFront             | Ensures failover between two origins in CloudFront                |
+| 6  | MOCK Integrations in API Gateway       | Returns predefined responses with no backend                      |
+| 7  | RCU and WCU in DynamoDB                | Defines throughput for read/write operations                      |
+| 8  | DAX in DynamoDB                        | In-memory cache for fast, low-latency reads                       |
+| 9  | Batch Operations in DynamoDB           | Reduce API calls by grouping reads/writes                         |
+| 10 | DynamoDB Pricing                       | Charges for storage, RCU/WCU, and optional features               |
+| 11 | Gateway VPC Endpoint for DynamoDB      | Secure, internet-free access from VPC to DynamoDB                 |
+| 12 | SQS Extended Client                    | Stores large payloads in S3, only references in SQS               |
+| 13 | SQS Dead-Letter Queues (DLQ)           | Captures messages that fail processing after max retry attempts   |
+| 14 | Dedicated Worker in Beanstalk          | Processes SQS messages using EC2-based app                        |
+| 15 | Beanstalk vs Lambda for SQS            | Choose based on latency, cost, and flexibility                    |
+| 16 | Triggering Beanstalk Workers           | Works only with SQS, not direct events or HTTP                    |
+| 17 | Elastic Beanstalk Serverless?          | Not serverless—manages EC2 with auto scaling                      |
+| 18 | ecs.config File                        | Controls ECS agent behavior on EC2 instances                      |
+| 19 | Step Functions Workflow Types          | Standard = durable, Express = high-speed                          |
+| 20 | AWS Glue                               | Discover, catalog, and transform data using visual or code jobs   |
+| 21 | CloudFormation Pseudo Parameters       | Built-in variables like AWS::AccountId or AWS::Region             |
+| 22 | AWS CloudFormation Change Sets         | Previews changes to resources before applying an update           |
 
 ---
+
 
 ## 📘 Detailed Notes
 
@@ -208,45 +195,6 @@ Global Tables let you deploy tables in multiple regions, allowing read/write acc
 
 ### 20. DynamoDB: Conflict Handling in Global Tables
 Global Tables use **last-writer-wins** conflict resolution based on timestamps. Replication is **asynchronous**, so simultaneous writes can be overwritten.
-
----
-
-
-
-# AWS Certified Developer – Associate Exam Notes
-
-This repository contains categorized and logically ordered notes to help you prepare for the **AWS Certified Developer – Associate** exam. Topics are arranged from basic foundational services (like S3 and CloudFront) to more advanced orchestration, ETL, and infrastructure concepts.
-
----
-
-## Cheat Sheet Table (Ordered from Basic to Advanced)
-
-| #  | Topic                                  | Cheat Sheet Summary                                                |
-|----|----------------------------------------|--------------------------------------------------------------------|
-| 1  | Built-in Encryption in S3              | Uses SSE-S3, SSE-KMS, or SSE-C to encrypt objects at rest         |
-| 2  | SSE-S3 Costs and Limitations           | Free, low-latency, but not reusable for other services            |
-| 3  | S3 Event Notifications to SNS          | Trigger SNS topic when an object is uploaded to S3                |
-| 4  | S3 Replication (SRR/CRR)               | Auto-copy of objects within or across AWS regions                 |
-| 5  | Origin Group in CloudFront             | Ensures failover between two origins in CloudFront                |
-| 6  | MOCK Integrations in API Gateway       | Returns predefined responses with no backend                      |
-| 7  | RCU and WCU in DynamoDB                | Defines throughput for read/write operations                      |
-| 8  | DAX in DynamoDB                        | In-memory cache for fast, low-latency reads                       |
-| 9  | Batch Operations in DynamoDB           | Reduce API calls by grouping reads/writes                         |
-| 10 | DynamoDB Pricing                       | Charges for storage, RCU/WCU, and optional features               |
-| 11 | Gateway VPC Endpoint for DynamoDB      | Secure, internet-free access from VPC to DynamoDB                 |
-| 12 | SQS Extended Client                    | Stores large payloads in S3, only references in SQS               |
-| 13 | SQS Dead-Letter Queues (DLQ)           | Captures messages that fail processing after max retry attempts   |
-| 14 | Dedicated Worker in Beanstalk          | Processes SQS messages using EC2-based app                        |
-| 15 | Beanstalk vs Lambda for SQS            | Choose based on latency, cost, and flexibility                    |
-| 16 | Triggering Beanstalk Workers           | Works only with SQS, not direct events or HTTP                    |
-| 17 | Elastic Beanstalk Serverless?          | Not serverless—manages EC2 with auto scaling                      |
-| 18 | ecs.config File                        | Controls ECS agent behavior on EC2 instances                      |
-| 19 | Step Functions Workflow Types          | Standard = durable, Express = high-speed                          |
-| 20 | AWS Glue                               | Discover, catalog, and transform data using visual or code jobs   |
-| 21 | CloudFormation Pseudo Parameters       | Built-in variables like AWS::AccountId or AWS::Region             |
-| 22 | AWS CloudFormation Change Sets         | Previews changes to resources before applying an update           |
-
----
 
 ## Topic Descriptions
 
@@ -321,5 +269,3 @@ Safely preview the differences between the current stack and proposed changes—
 ## License
 
 MIT License ⇒ free to use, modify, and share. Contributions welcome!
-
-
