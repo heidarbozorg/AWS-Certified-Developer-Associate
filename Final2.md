@@ -1,4 +1,4 @@
-# AWS Certified Developer – Associate Notes
+# AWS Certified Developer – Associate Last Dates Notes
 
 ## Cheat Sheet Table
 
@@ -131,6 +131,9 @@
 | 125 | [`sam sync`](#125-sam-sync) | Rapidly updates code/config for existing resources, but cannot create new ones. |
 | 126 | [ecs.config File](#126-ecsconfig-file) | Controls ECS agent behavior on EC2 instances |
 
+---
+
+## Detailed Notes
 
 ### 1. ALB Host-Based vs Path-Based Routing
 Application Load Balancer (ALB) supports routing based on **host headers** (e.g., `api.example.com`) or **path patterns** (e.g., `/images/*`). Use host-based routing to serve multiple domains from one ALB, and path-based routing to forward requests to different target groups based on URL structure.
