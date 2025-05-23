@@ -630,3 +630,10 @@ The `ecs.config` file on an **EC2 instance running ECS agent** allows configurat
 - Set logging options
 - Define container instance attributes
 The file is typically placed at `/etc/ecs/ecs.config`.
+
+
+## Important Notes
+
+- This repository is an independent study resource for the **AWS Certified Developer – Associate** exam.
+- It is **not affiliated with or endorsed by Amazon Web Services (AWS)**.
+- Contributions are welcome! Feel free to open a **pull request** to share your own AWS notes or corrections.
