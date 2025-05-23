@@ -266,6 +266,8 @@ Safely preview the differences between the current stack and proposed changes—
 
 ---
 
-## License
+## Important Notes
 
-MIT License ⇒ free to use, modify, and share. Contributions welcome!
+- This repository is an independent study resource for the **AWS Certified Developer – Associate** exam.
+- It is **not affiliated with or endorsed by Amazon Web Services (AWS)**.
+- Contributions are welcome! Feel free to open a **pull request** to share your own AWS notes or corrections.
